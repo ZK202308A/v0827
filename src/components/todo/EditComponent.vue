@@ -66,7 +66,11 @@ onMounted(() => {
 
   getOne(route.params.mno).then(
     res => {
-      if(res.writer != mid) {
+
+      console.log("res.writer: " + res.writer)
+      console.log(mid.value)
+
+      if(res.writer != mid.value) {
         console.log("다른 사람이 작성한 글")
         alert("다른 사람의 글이므로 수정/삭제 불가")
         router.replace("/todo/list")

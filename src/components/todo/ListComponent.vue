@@ -44,7 +44,6 @@ const handleClickPage = (pageNum) => {
 
   if(currentQueryPage == pageNum) {
     console.log("동일 페이지 클릭")
-
     getList(pageNum).then(res => serverData.value = res)
 
   }else {
