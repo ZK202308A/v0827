@@ -1,12 +1,17 @@
 
 
 <template>
-  <div>
-    <h1>Todo Edit Page</h1>
+  <div class="row">
+    <div class="card">
+      <h1>Todo Edit Page</h1>
+      <EditComponent></EditComponent>
+    </div>
   </div>
 </template>
 
 <script setup>
+import EditComponent from '../../components/todo/EditComponent.vue';
+
 
 </script>
 

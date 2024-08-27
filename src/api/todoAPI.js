@@ -13,7 +13,26 @@ export const getList = async (pageNum) => {
 export const addOne = async (todo) => {
 
   const res = await axios.post(host, todo)
+  return res.data
+}
 
+export const getOne = async (mno) => {
+
+  const res = await axios.get(`${host}/${mno}`)
   return res.data
 
+}
+
+export const deleteOne = async (mno) => {
+
+  const res = await axios.delete(`${host}/${mno}`)
+  return res.data
+
+}
+
+export const putOne = async (todo) => {
+
+  const res = await axios.put(`${host}/${todo.mno}`, todo)
+
+  return res.data
 }
