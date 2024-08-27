@@ -29,12 +29,15 @@
 import { ref } from 'vue';
 import { addOne } from '../../api/todoAPI';
 import { useRouter } from 'vue-router';
+import useMember from '../../store/useMember';
 
 const router = useRouter()
 
+const {mid} = useMember()
+
 const todo = ref({
   title:'',
-  writer:'',
+  writer: mid,
   dueDate:''
 })
 
@@ -48,8 +51,9 @@ const handleClick = () => {
     router.push('/todo/list')
 
   })
-
 }
+
+
 
 
 

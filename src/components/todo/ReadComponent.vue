@@ -23,7 +23,7 @@
     <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
   </div>
 
-  <div class="mb-3">
+  <div class="mb-3" v-if="todo.writer === mid">
     <button type="button" class="btn btn-primary" @click="handleClick" >Edit</button>
   </div>
 </template>
@@ -32,9 +32,12 @@
 import { onMounted, ref } from 'vue';
 import { getOne } from '../../api/todoAPI';
 import { useRoute, useRouter } from 'vue-router';
+import useMember from '../../store/useMember';
 
 const route = useRoute()
 const router = useRouter()
+
+const {mid} = useMember()
 
 const handleClick = () => {
   router.push(`/todo/edit/${todo.value.mno}`)

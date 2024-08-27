@@ -33,9 +33,12 @@
 import { onMounted, ref } from 'vue';
 import { getOne, deleteOne, putOne } from '../../api/todoAPI';
 import { useRoute, useRouter } from 'vue-router';
+import useMember from '../../store/useMember';
 
 const route = useRoute()
 const router = useRouter()
+
+const {mid} = useMember()
 
 const handleClickDelete = () => {
   
@@ -61,7 +64,16 @@ const todo = ref({
 
 onMounted(() => {
 
-  getOne(route.params.mno).then(res => todo.value = res)
+  getOne(route.params.mno).then(
+    res => {
+      if(res.writer != mid) {
+        console.log("다른 사람이 작성한 글")
+        alert("다른 사람의 글이므로 수정/삭제 불가")
+        router.replace("/todo/list")
+      }
+
+      todo.value = res
+    })
 
 })
 </script>

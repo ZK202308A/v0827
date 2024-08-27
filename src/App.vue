@@ -1,5 +1,9 @@
 <script setup>
 import { RouterView , RouterLink} from 'vue-router';
+import useMember from './store/useMember';
+
+const {mid} = useMember()
+
 </script>
 
 <template>
@@ -24,7 +28,9 @@ import { RouterView , RouterLink} from 'vue-router';
         </div>
     </div>
 </nav>
-
+<hr/>
+{{ mid }}
+<hr/>
   <RouterView></RouterView>
   
 </template>
