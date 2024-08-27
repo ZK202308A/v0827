@@ -14,7 +14,7 @@ import { RouterView , RouterLink} from 'vue-router';
             <div class="navbar-nav">
                 <RouterLink to="/" class="nav-item nav-link active">Home</RouterLink>
                 <RouterLink to="/about" class="nav-item nav-link ">About</RouterLink>
-                <a href="#" class="nav-item nav-link">About</a>
+                <RouterLink to="/todo" class="nav-item nav-link ">Todo</RouterLink>
                 <a href="#" class="nav-item nav-link">Contact</a>
             </div>
             <div class="navbar-nav ms-auto">
